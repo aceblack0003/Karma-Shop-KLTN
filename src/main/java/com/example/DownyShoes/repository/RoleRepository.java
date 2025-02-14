@@ -1,10 +1,10 @@
-package com.example.LaptopShop.repository;
+package com.example.DownyShoes.repository;
 
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.example.LaptopShop.domain.Role;
+import com.example.DownyShoes.domain.Role;
 
 @Repository
 public interface RoleRepository extends JpaRepository<Role, Long> {

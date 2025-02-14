@@ -1,4 +1,4 @@
-package com.example.LaptopShop.domain;
+package com.example.DownyShoes.domain;
 
 
 import jakarta.persistence.Entity;

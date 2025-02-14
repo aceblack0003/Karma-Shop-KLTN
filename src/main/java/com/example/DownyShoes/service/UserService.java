@@ -1,13 +1,13 @@
-package com.example.LaptopShop.service;
+package com.example.DownyShoes.service;
 
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.example.LaptopShop.domain.Role;
-import com.example.LaptopShop.domain.User;
-import com.example.LaptopShop.repository.RoleRepository;
-import com.example.LaptopShop.repository.UserRepository;
+import com.example.DownyShoes.domain.Role;
+import com.example.DownyShoes.domain.User;
+import com.example.DownyShoes.repository.RoleRepository;
+import com.example.DownyShoes.repository.UserRepository;
 
 @Service
 public class UserService {

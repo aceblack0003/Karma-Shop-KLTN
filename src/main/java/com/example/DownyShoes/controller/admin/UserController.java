@@ -1,4 +1,4 @@
-package com.example.LaptopShop.controller.admin;
+package com.example.DownyShoes.controller.admin;
 
 import java.util.List;
 
@@ -13,9 +13,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.example.LaptopShop.domain.User;
-import com.example.LaptopShop.service.UploadService;
-import com.example.LaptopShop.service.UserService;
+import com.example.DownyShoes.domain.User;
+import com.example.DownyShoes.service.UploadService;
+import com.example.DownyShoes.service.UserService;
 
 @Controller
 public class UserController {

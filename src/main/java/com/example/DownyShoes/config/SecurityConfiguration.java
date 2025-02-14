@@ -1,4 +1,4 @@
-package com.example.LaptopShop.config;
+package com.example.DownyShoes.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
