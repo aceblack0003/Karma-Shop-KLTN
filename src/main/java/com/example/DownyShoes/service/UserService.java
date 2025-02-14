@@ -28,8 +28,8 @@ public class UserService {
         return this.userRepository.findOneByEmail(email);
     }
 
-    public User handleSaveUser(User user) {
-       return this.userRepository.save(user);
+    public User handleSaveUser(User newUser) {
+       return this.userRepository.save(newUser);
 
     }
 

@@ -5,6 +5,8 @@ import java.util.List;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,6 +18,8 @@ import org.springframework.web.multipart.MultipartFile;
 import com.example.DownyShoes.domain.User;
 import com.example.DownyShoes.service.UploadService;
 import com.example.DownyShoes.service.UserService;
+
+import jakarta.validation.Valid;
 
 @Controller
 public class UserController {
@@ -61,14 +65,23 @@ public class UserController {
     @PostMapping("/admin/user/create")
     public String createUserPage(
             Model model,
-            @ModelAttribute("newUser") User newUser,
+            @ModelAttribute("newUser") @Valid User newUser,
+            BindingResult bindingResult,
             @RequestParam("avatarFile") MultipartFile avatarFile) {
-
-        String avatar = this.uploadService.handleSaveFile(avatarFile, "avatar");
+        // validate
+        List<FieldError> errors = bindingResult.getFieldErrors();
+        for (FieldError error : errors) {
+            System.out.println(error.getField() + " - " + error.getDefaultMessage());
+        }
+        if (bindingResult.hasErrors()) {
+            return "/admin/user/create";
+        }
+        //
+        String avatar = this.uploadService.handleSaveUploadFile(avatarFile, "avatar");
         String hashedPassword = this.passwordEncoder.encode(newUser.getPassword());
         newUser.setAvatar(avatar);
-        newUser.setPassword(hashedPassword);
         newUser.setRole(this.userService.getRoleByName(newUser.getRole().getName()));
+        newUser.setPassword(hashedPassword);
         this.userService.handleSaveUser(newUser);
         return "redirect:/admin/user";
     }

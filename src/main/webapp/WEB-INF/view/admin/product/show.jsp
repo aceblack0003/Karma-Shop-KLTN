@@ -44,21 +44,21 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <!-- <c:forEach items="${users}" var="user">
+                                                <c:forEach items="${products}" var="product">
                                                 <tr>
-                                                    <th>${user.id}</th>
-                                                    <td>${user.email}</td>
-                                                    <td>${user.fullName}</td>
-                                                    <td>${user.role.name}</td>
+                                                    <th>${product.id}</th>
+                                                    <td>${product.name}</td>
+                                                    <td>${product.price}</td>
+                                                    <td>${product.factory}</td>
                                                     <td>
             
-                                                        <a href="/admin/user/${user.id}" class="btn btn-success">View</a>
-                                                        <a href="/admin/user/update/${user.id}" class="btn btn-warning mx-2">Edit</a>
-                                                        <a href="/admin/user/delete/${user.id}" class="btn btn-danger">Delete</a>
+                                                        <a href="/admin/product/${product.id}" class="btn btn-success">View</a>
+                                                        <a href="/admin/product/update/${product.id}" class="btn btn-warning mx-2">Edit</a>
+                                                        <a href="/admin/product/delete/${product.id}" class="btn btn-danger">Delete</a>
                                                     </td>
             
                                                 </tr>
-                                                </c:forEach> -->
+                                                </c:forEach>
             
                                             </tbody>
                                         </table>
