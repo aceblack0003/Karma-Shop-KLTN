@@ -18,6 +18,12 @@
                 <script>
                     $(document).ready(() => {
                         const avatarFile = $("#avatarFile");
+                        const orgImage = "${newProduct.image}";
+                        if (orgImage) {
+                            const urlImage = "/images/product/" + orgImage;
+                            $("#avatarPreview").attr("src", urlImage);
+                            $("#avatarPreview").css({ "display": "block" });
+                        }
                         avatarFile.change(function (e) {
                             const imgURL = URL.createObjectURL(e.target.files[0]);
                             $("#avatarPreview").attr("src", imgURL);
@@ -42,11 +48,11 @@
                                 <div class="container mt-5">
                                     <div class="row">
                                         <div class="col-md-6 col-12 mx-auto">
-                                            <h3>Create a product</h3>
+                                            <h3>Update a product</h3>
                                             <hr />
-                                            <form:form method="post" action="/admin/product/create"
+                                            <form:form method="post" action="/admin/product/update"
                                                 enctype="multipart/form-data" modelAttribute="newProduct" class="row">
-
+                                                <form:hidden path="id" />
                                                 <div class="mb-3 col-12 col-md-6">
                                                     <label class="form-label">Name:</label>
                                                     <c:set var="nameError">
@@ -125,7 +131,7 @@
                                                         id="avatarPreview">
                                                 </div>
                                                 <div class="mb-5 col-12">
-                                                    <button type="submit" class="btn btn-primary">Create</button>
+                                                    <button type="submit" class="btn btn-warning">Update</button>
                                                 </div>
                                             </form:form>
                                         </div>
