@@ -5,95 +5,702 @@
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>DOWNY SHOES</title>
+            <title>Karma Shop</title>
             <!-- Latest compiled and minified CSS -->
-            <link rel="shortcut icon" type="image/x-icon" href="client/Images/img-DS.png" />
-            <link rel="stylesheet" href="client/css/style.css" />
-            <link rel="stylesheet" href="client/css/navbar.css" />
-            <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet" />
-            <link rel="stylesheet" href="client/css/preloader.css" />
-            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
-                integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
-                crossorigin="anonymous" />
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-            <script src="client/js/preloader.js"></script>
+            <link rel="shortcut icon" href="/client/img/fav.png">
+
+            <link rel="stylesheet" href="/client/css/linearicons.css">
+            <link rel="stylesheet" href="/client/css/font-awesome.min.css">
+            <link rel="stylesheet" href="/client/css/themify-icons.css">
+            <link rel="stylesheet" href="/client/css/bootstrap.css">
+            <link rel="stylesheet" href="/client/css/owl.carousel.css">
+            <link rel="stylesheet" href="/client/css/nice-select.css">
+            <link rel="stylesheet" href="/client/css/nouislider.min.css">
+            <link rel="stylesheet" href="/client/css/ion.rangeSlider.css" />
+            <link rel="stylesheet" href="/client/css/ion.rangeSlider.skinFlat.css" />
+            <link rel="stylesheet" href="/client/css/magnific-popup.css">
+            <link rel="stylesheet" href="/client/css/main.css">
 
 
         </head>
 
 
         <body>
-            <div class="se-pre-con"></div>
-            <header id="home">
-                <jsp:include page="/WEB-INF/view/client/layout/header.jsp" />
-                <jsp:include page="/WEB-INF/view/client/layout/banner.jsp" />
-            </header>
-            <section>
-                <div class="row" style="width: 80%;
-              margin: 0 auto;">
-                    <div class="col">
-                        <div class="overlay-image">
-                            <a href="/product/men">
-                                <img class="image" src="client/Images/img-men6.jpg" alt="Alt text" />
-                                <div class="normal">
-                                    <div class="text">MEN</div>
-                                </div>
-                                <div class="hover">
-                                    <img class="image" src="client/Images/img-Nike12.jpg" alt="Alt text hover" />
-                                    <div class="text">MEN</div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="overlay-image">
-                            <a href="/product/women">
-                                <img class="image" src="client/Images/img-women5.jpeg" alt="Alt text" />
-                                <div class="normal">
-                                    <div class="text">WOMEN</div>
-                                </div>
-                                <div class="hover">
-                                    <img class="image" src="client/Images/img-women6.jpeg" alt="Alt text hover" />
-                                    <div class="text">WOMEN</div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section class="preview">
-                <h2 align="center">Best Sellers</h2>
-                <div class="row" style="  width: 80%;
-              margin: 0 auto;">
-                    <figure class="item">
-                        <a href="/product/${product.id}">
-                            <img src="client/Images/img-Nike1.jpg" alt="" width="100%" />
-                            <figcaption>Nike Run +</figcaption>
-                        </a>
-                    </figure>
-                    <figure class="item">
-                        <a href="/product/${product.id}">
-                            <img src="client/Images/img-Nike3.jpg" alt="" width="100%" />
-                            <figcaption>Nike Air Blue</figcaption>
-                        </a>
-                    </figure>
-                    <figure class="item">
-                        <a href="/product/${product.id}">
-                            <img src="client/Images/img-Nike5.jpg" width="100%" />
-                            <figcaption>Casual Nike</figcaption>
-                        </a>
-                    </figure>
-                    <figure class="item">
-                        <a href="/product/{id}">
-                            <img src="client/Images/img-Nike10.jpg" alt="" width="100%" />
-                            <figcaption>Nike Air Orange</figcaption>
-                        </a>
-                    </figure>
-                </div>
-            </section>
 
+            <!-- Start Header Area -->
+            <jsp:include page="/WEB-INF/view/client/layout/header.jsp" />
+            <!-- End Header Area -->
+
+            <!-- start banner Area -->
+            <jsp:include page="/WEB-INF/view/client/layout/banner.jsp" />
+            <!-- End banner Area -->
+
+            <!-- start features Area -->
+            <jsp:include page="/WEB-INF/view/client/layout/features.jsp" />
+            <!-- end features Area -->
+
+            <!-- start product Area -->
+            <section class="owl-carousel active-product-area section_gap">
+                <!-- single product slide -->
+                <div class="single-product-slider">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-6 text-center">
+                                <div class="section-title">
+                                    <h1>Latest Products</h1>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                                        incididunt ut labore et
+                                        dolore
+                                        magna aliqua.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <!-- single product -->
+                            <div class="col-lg-3 col-md-6">
+                                <div class="single-product">
+                                    <img class="img-fluid" src="/client/img/product/p1.jpg" alt="">
+                                    <div class="product-details">
+                                        <h6>addidas New Hammer sole
+                                            for Sports person</h6>
+                                        <div class="price">
+                                            <h6>$150.00</h6>
+                                            <h6 class="l-through">$210.00</h6>
+                                        </div>
+                                        <div class="prd-bottom">
+
+                                            <a href="" class="social-info">
+                                                <span class="ti-bag"></span>
+                                                <p class="hover-text">add to bag</p>
+                                            </a>
+                                            <a href="" class="social-info">
+                                                <span class="lnr lnr-heart"></span>
+                                                <p class="hover-text">Wishlist</p>
+                                            </a>
+                                            <a href="" class="social-info">
+                                                <span class="lnr lnr-sync"></span>
+                                                <p class="hover-text">compare</p>
+                                            </a>
+                                            <a href="" class="social-info">
+                                                <span class="lnr lnr-move"></span>
+                                                <p class="hover-text">view more</p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- single product -->
+                            <div class="col-lg-3 col-md-6">
+                                <div class="single-product">
+                                    <img class="img-fluid" src="/client/img/product/p2.jpg" alt="">
+                                    <div class="product-details">
+                                        <h6>addidas New Hammer sole
+                                            for Sports person</h6>
+                                        <div class="price">
+                                            <h6>$150.00</h6>
+                                            <h6 class="l-through">$210.00</h6>
+                                        </div>
+                                        <div class="prd-bottom">
+
+                                            <a href="" class="social-info">
+                                                <span class="ti-bag"></span>
+                                                <p class="hover-text">add to bag</p>
+                                            </a>
+                                            <a href="" class="social-info">
+                                                <span class="lnr lnr-heart"></span>
+                                                <p class="hover-text">Wishlist</p>
+                                            </a>
+                                            <a href="" class="social-info">
+                                                <span class="lnr lnr-sync"></span>
+                                                <p class="hover-text">compare</p>
+                                            </a>
+                                            <a href="" class="social-info">
+                                                <span class="lnr lnr-move"></span>
+                                                <p class="hover-text">view more</p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- single product -->
+                            <div class="col-lg-3 col-md-6">
+                                <div class="single-product">
+                                    <img class="img-fluid" src="/client/img/product/p3.jpg" alt="">
+                                    <div class="product-details">
+                                        <h6>addidas New Hammer sole
+                                            for Sports person</h6>
+                                        <div class="price">
+                                            <h6>$150.00</h6>
+                                            <h6 class="l-through">$210.00</h6>
+                                        </div>
+                                        <div class="prd-bottom">
+                                            <a href="" class="social-info">
+                                                <span class="ti-bag"></span>
+                                                <p class="hover-text">add to bag</p>
+                                            </a>
+                                            <a href="" class="social-info">
+                                                <span class="lnr lnr-heart"></span>
+                                                <p class="hover-text">Wishlist</p>
+                                            </a>
+                                            <a href="" class="social-info">
+                                                <span class="lnr lnr-sync"></span>
+                                                <p class="hover-text">compare</p>
+                                            </a>
+                                            <a href="" class="social-info">
+                                                <span class="lnr lnr-move"></span>
+                                                <p class="hover-text">view more</p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- single product -->
+                            <div class="col-lg-3 col-md-6">
+                                <div class="single-product">
+                                    <img class="img-fluid" src="/client/img/product/p4.jpg" alt="">
+                                    <div class="product-details">
+                                        <h6>addidas New Hammer sole
+                                            for Sports person</h6>
+                                        <div class="price">
+                                            <h6>$150.00</h6>
+                                            <h6 class="l-through">$210.00</h6>
+                                        </div>
+                                        <div class="prd-bottom">
+
+                                            <a href="" class="social-info">
+                                                <span class="ti-bag"></span>
+                                                <p class="hover-text">add to bag</p>
+                                            </a>
+                                            <a href="" class="social-info">
+                                                <span class="lnr lnr-heart"></span>
+                                                <p class="hover-text">Wishlist</p>
+                                            </a>
+                                            <a href="" class="social-info">
+                                                <span class="lnr lnr-sync"></span>
+                                                <p class="hover-text">compare</p>
+                                            </a>
+                                            <a href="" class="social-info">
+                                                <span class="lnr lnr-move"></span>
+                                                <p class="hover-text">view more</p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- single product -->
+                            <div class="col-lg-3 col-md-6">
+                                <div class="single-product">
+                                    <img class="img-fluid" src="/client/img/product/p5.jpg" alt="">
+                                    <div class="product-details">
+                                        <h6>addidas New Hammer sole
+                                            for Sports person</h6>
+                                        <div class="price">
+                                            <h6>$150.00</h6>
+                                            <h6 class="l-through">$210.00</h6>
+                                        </div>
+                                        <div class="prd-bottom">
+
+                                            <a href="" class="social-info">
+                                                <span class="ti-bag"></span>
+                                                <p class="hover-text">add to bag</p>
+                                            </a>
+                                            <a href="" class="social-info">
+                                                <span class="lnr lnr-heart"></span>
+                                                <p class="hover-text">Wishlist</p>
+                                            </a>
+                                            <a href="" class="social-info">
+                                                <span class="lnr lnr-sync"></span>
+                                                <p class="hover-text">compare</p>
+                                            </a>
+                                            <a href="" class="social-info">
+                                                <span class="lnr lnr-move"></span>
+                                                <p class="hover-text">view more</p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- single product -->
+                            <div class="col-lg-3 col-md-6">
+                                <div class="single-product">
+                                    <img class="img-fluid" src="/client/img/product/p6.jpg" alt="">
+                                    <div class="product-details">
+                                        <h6>addidas New Hammer sole
+                                            for Sports person</h6>
+                                        <div class="price">
+                                            <h6>$150.00</h6>
+                                            <h6 class="l-through">$210.00</h6>
+                                        </div>
+                                        <div class="prd-bottom">
+
+                                            <a href="" class="social-info">
+                                                <span class="ti-bag"></span>
+                                                <p class="hover-text">add to bag</p>
+                                            </a>
+                                            <a href="" class="social-info">
+                                                <span class="lnr lnr-heart"></span>
+                                                <p class="hover-text">Wishlist</p>
+                                            </a>
+                                            <a href="" class="social-info">
+                                                <span class="lnr lnr-sync"></span>
+                                                <p class="hover-text">compare</p>
+                                            </a>
+                                            <a href="" class="social-info">
+                                                <span class="lnr lnr-move"></span>
+                                                <p class="hover-text">view more</p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- single product -->
+                            <div class="col-lg-3 col-md-6">
+                                <div class="single-product">
+                                    <img class="img-fluid" src="/client/img/product/p7.jpg" alt="">
+                                    <div class="product-details">
+                                        <h6>addidas New Hammer sole
+                                            for Sports person</h6>
+                                        <div class="price">
+                                            <h6>$150.00</h6>
+                                            <h6 class="l-through">$210.00</h6>
+                                        </div>
+                                        <div class="prd-bottom">
+
+                                            <a href="" class="social-info">
+                                                <span class="ti-bag"></span>
+                                                <p class="hover-text">add to bag</p>
+                                            </a>
+                                            <a href="" class="social-info">
+                                                <span class="lnr lnr-heart"></span>
+                                                <p class="hover-text">Wishlist</p>
+                                            </a>
+                                            <a href="" class="social-info">
+                                                <span class="lnr lnr-sync"></span>
+                                                <p class="hover-text">compare</p>
+                                            </a>
+                                            <a href="" class="social-info">
+                                                <span class="lnr lnr-move"></span>
+                                                <p class="hover-text">view more</p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- single product -->
+                            <div class="col-lg-3 col-md-6">
+                                <div class="single-product">
+                                    <img class="img-fluid" src="/client/img/product/p8.jpg" alt="">
+                                    <div class="product-details">
+                                        <h6>addidas New Hammer sole
+                                            for Sports person</h6>
+                                        <div class="price">
+                                            <h6>$150.00</h6>
+                                            <h6 class="l-through">$210.00</h6>
+                                        </div>
+                                        <div class="prd-bottom">
+
+                                            <a href="" class="social-info">
+                                                <span class="ti-bag"></span>
+                                                <p class="hover-text">add to bag</p>
+                                            </a>
+                                            <a href="" class="social-info">
+                                                <span class="lnr lnr-heart"></span>
+                                                <p class="hover-text">Wishlist</p>
+                                            </a>
+                                            <a href="" class="social-info">
+                                                <span class="lnr lnr-sync"></span>
+                                                <p class="hover-text">compare</p>
+                                            </a>
+                                            <a href="" class="social-info">
+                                                <span class="lnr lnr-move"></span>
+                                                <p class="hover-text">view more</p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- single product slide -->
+                <div class="single-product-slider">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-6 text-center">
+                                <div class="section-title">
+                                    <h1>Coming Products</h1>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                                        incididunt ut labore et
+                                        dolore
+                                        magna aliqua.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <!-- single product -->
+                            <div class="col-lg-3 col-md-6">
+                                <div class="single-product">
+                                    <img class="img-fluid" src="/client/img/product/p6.jpg" alt="">
+                                    <div class="product-details">
+                                        <h6>addidas New Hammer sole
+                                            for Sports person</h6>
+                                        <div class="price">
+                                            <h6>$150.00</h6>
+                                            <h6 class="l-through">$210.00</h6>
+                                        </div>
+                                        <div class="prd-bottom">
+
+                                            <a href="" class="social-info">
+                                                <span class="ti-bag"></span>
+                                                <p class="hover-text">add to bag</p>
+                                            </a>
+                                            <a href="" class="social-info">
+                                                <span class="lnr lnr-heart"></span>
+                                                <p class="hover-text">Wishlist</p>
+                                            </a>
+                                            <a href="" class="social-info">
+                                                <span class="lnr lnr-sync"></span>
+                                                <p class="hover-text">compare</p>
+                                            </a>
+                                            <a href="" class="social-info">
+                                                <span class="lnr lnr-move"></span>
+                                                <p class="hover-text">view more</p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- single product -->
+                            <div class="col-lg-3 col-md-6">
+                                <div class="single-product">
+                                    <img class="img-fluid" src="/client/img/product/p8.jpg" alt="">
+                                    <div class="product-details">
+                                        <h6>addidas New Hammer sole
+                                            for Sports person</h6>
+                                        <div class="price">
+                                            <h6>$150.00</h6>
+                                            <h6 class="l-through">$210.00</h6>
+                                        </div>
+                                        <div class="prd-bottom">
+
+                                            <a href="" class="social-info">
+                                                <span class="ti-bag"></span>
+                                                <p class="hover-text">add to bag</p>
+                                            </a>
+                                            <a href="" class="social-info">
+                                                <span class="lnr lnr-heart"></span>
+                                                <p class="hover-text">Wishlist</p>
+                                            </a>
+                                            <a href="" class="social-info">
+                                                <span class="lnr lnr-sync"></span>
+                                                <p class="hover-text">compare</p>
+                                            </a>
+                                            <a href="" class="social-info">
+                                                <span class="lnr lnr-move"></span>
+                                                <p class="hover-text">view more</p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- single product -->
+                            <div class="col-lg-3 col-md-6">
+                                <div class="single-product">
+                                    <img class="img-fluid" src="/client/img/product/p3.jpg" alt="">
+                                    <div class="product-details">
+                                        <h6>addidas New Hammer sole
+                                            for Sports person</h6>
+                                        <div class="price">
+                                            <h6>$150.00</h6>
+                                            <h6 class="l-through">$210.00</h6>
+                                        </div>
+                                        <div class="prd-bottom">
+
+                                            <a href="" class="social-info">
+                                                <span class="ti-bag"></span>
+                                                <p class="hover-text">add to bag</p>
+                                            </a>
+                                            <a href="" class="social-info">
+                                                <span class="lnr lnr-heart"></span>
+                                                <p class="hover-text">Wishlist</p>
+                                            </a>
+                                            <a href="" class="social-info">
+                                                <span class="lnr lnr-sync"></span>
+                                                <p class="hover-text">compare</p>
+                                            </a>
+                                            <a href="" class="social-info">
+                                                <span class="lnr lnr-move"></span>
+                                                <p class="hover-text">view more</p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- single product -->
+                            <div class="col-lg-3 col-md-6">
+                                <div class="single-product">
+                                    <img class="img-fluid" src="/client/img/product/p5.jpg" alt="">
+                                    <div class="product-details">
+                                        <h6>addidas New Hammer sole
+                                            for Sports person</h6>
+                                        <div class="price">
+                                            <h6>$150.00</h6>
+                                            <h6 class="l-through">$210.00</h6>
+                                        </div>
+                                        <div class="prd-bottom">
+
+                                            <a href="" class="social-info">
+                                                <span class="ti-bag"></span>
+                                                <p class="hover-text">add to bag</p>
+                                            </a>
+                                            <a href="" class="social-info">
+                                                <span class="lnr lnr-heart"></span>
+                                                <p class="hover-text">Wishlist</p>
+                                            </a>
+                                            <a href="" class="social-info">
+                                                <span class="lnr lnr-sync"></span>
+                                                <p class="hover-text">compare</p>
+                                            </a>
+                                            <a href="" class="social-info">
+                                                <span class="lnr lnr-move"></span>
+                                                <p class="hover-text">view more</p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- single product -->
+                            <div class="col-lg-3 col-md-6">
+                                <div class="single-product">
+                                    <img class="img-fluid" src="/client/img/product/p1.jpg" alt="">
+                                    <div class="product-details">
+                                        <h6>addidas New Hammer sole
+                                            for Sports person</h6>
+                                        <div class="price">
+                                            <h6>$150.00</h6>
+                                            <h6 class="l-through">$210.00</h6>
+                                        </div>
+                                        <div class="prd-bottom">
+
+                                            <a href="" class="social-info">
+                                                <span class="ti-bag"></span>
+                                                <p class="hover-text">add to bag</p>
+                                            </a>
+                                            <a href="" class="social-info">
+                                                <span class="lnr lnr-heart"></span>
+                                                <p class="hover-text">Wishlist</p>
+                                            </a>
+                                            <a href="" class="social-info">
+                                                <span class="lnr lnr-sync"></span>
+                                                <p class="hover-text">compare</p>
+                                            </a>
+                                            <a href="" class="social-info">
+                                                <span class="lnr lnr-move"></span>
+                                                <p class="hover-text">view more</p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- single product -->
+                            <div class="col-lg-3 col-md-6">
+                                <div class="single-product">
+                                    <img class="img-fluid" src="/client/img/product/p4.jpg" alt="">
+                                    <div class="product-details">
+                                        <h6>addidas New Hammer sole
+                                            for Sports person</h6>
+                                        <div class="price">
+                                            <h6>$150.00</h6>
+                                            <h6 class="l-through">$210.00</h6>
+                                        </div>
+                                        <div class="prd-bottom">
+
+                                            <a href="" class="social-info">
+                                                <span class="ti-bag"></span>
+                                                <p class="hover-text">add to bag</p>
+                                            </a>
+                                            <a href="" class="social-info">
+                                                <span class="lnr lnr-heart"></span>
+                                                <p class="hover-text">Wishlist</p>
+                                            </a>
+                                            <a href="" class="social-info">
+                                                <span class="lnr lnr-sync"></span>
+                                                <p class="hover-text">compare</p>
+                                            </a>
+                                            <a href="" class="social-info">
+                                                <span class="lnr lnr-move"></span>
+                                                <p class="hover-text">view more</p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- single product -->
+                            <div class="col-lg-3 col-md-6">
+                                <div class="single-product">
+                                    <img class="img-fluid" src="/client/img/product/p1.jpg" alt="">
+                                    <div class="product-details">
+                                        <h6>addidas New Hammer sole
+                                            for Sports person</h6>
+                                        <div class="price">
+                                            <h6>$150.00</h6>
+                                            <h6 class="l-through">$210.00</h6>
+                                        </div>
+                                        <div class="prd-bottom">
+
+                                            <a href="" class="social-info">
+                                                <span class="ti-bag"></span>
+                                                <p class="hover-text">add to bag</p>
+                                            </a>
+                                            <a href="" class="social-info">
+                                                <span class="lnr lnr-heart"></span>
+                                                <p class="hover-text">Wishlist</p>
+                                            </a>
+                                            <a href="" class="social-info">
+                                                <span class="lnr lnr-sync"></span>
+                                                <p class="hover-text">compare</p>
+                                            </a>
+                                            <a href="" class="social-info">
+                                                <span class="lnr lnr-move"></span>
+                                                <p class="hover-text">view more</p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- single product -->
+                            <div class="col-lg-3 col-md-6">
+                                <div class="single-product">
+                                    <img class="img-fluid" src="/client/img/product/p8.jpg" alt="">
+                                    <div class="product-details">
+                                        <h6>addidas New Hammer sole
+                                            for Sports person</h6>
+                                        <div class="price">
+                                            <h6>$150.00</h6>
+                                            <h6 class="l-through">$210.00</h6>
+                                        </div>
+                                        <div class="prd-bottom">
+
+                                            <a href="" class="social-info">
+                                                <span class="ti-bag"></span>
+                                                <p class="hover-text">add to bag</p>
+                                            </a>
+                                            <a href="" class="social-info">
+                                                <span class="lnr lnr-heart"></span>
+                                                <p class="hover-text">Wishlist</p>
+                                            </a>
+                                            <a href="" class="social-info">
+                                                <span class="lnr lnr-sync"></span>
+                                                <p class="hover-text">compare</p>
+                                            </a>
+                                            <a href="" class="social-info">
+                                                <span class="lnr lnr-move"></span>
+                                                <p class="hover-text">view more</p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- end product Area -->
+
+            <!-- Start exclusive deal Area -->
+            <section class="exclusive-deal-area">
+                <div class="container-fluid">
+                    <div class="row justify-content-center align-items-center">
+                        <div class="col-lg-6 no-padding exclusive-left">
+                            <div class="row clock_sec clockdiv" id="clockdiv">
+                                <div class="col-lg-12">
+                                    <h1>Exclusive Hot Deal Ends Soon!</h1>
+                                    <p>Who are in extremely love with eco friendly system.</p>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="row clock-wrap">
+                                        <div class="col clockinner1 clockinner">
+                                            <h1 class="days">150</h1>
+                                            <span class="smalltext">Days</span>
+                                        </div>
+                                        <div class="col clockinner clockinner1">
+                                            <h1 class="hours">23</h1>
+                                            <span class="smalltext">Hours</span>
+                                        </div>
+                                        <div class="col clockinner clockinner1">
+                                            <h1 class="minutes">47</h1>
+                                            <span class="smalltext">Mins</span>
+                                        </div>
+                                        <div class="col clockinner clockinner1">
+                                            <h1 class="seconds">59</h1>
+                                            <span class="smalltext">Secs</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="" class="primary-btn">Shop Now</a>
+                        </div>
+                        <div class="col-lg-6 no-padding exclusive-right">
+                            <div class="active-exclusive-product-slider">
+                                <!-- single exclusive carousel -->
+                                <div class="single-exclusive-slider">
+                                    <img class="img-fluid" src="/client/img/product/e-p1.png" alt="">
+                                    <div class="product-details">
+                                        <div class="price">
+                                            <h6>$150.00</h6>
+                                            <h6 class="l-through">$210.00</h6>
+                                        </div>
+                                        <h4>addidas New Hammer sole
+                                            for Sports person</h4>
+                                        <div class="add-bag d-flex align-items-center justify-content-center">
+                                            <a class="add-btn" href=""><span class="ti-bag"></span></a>
+                                            <span class="add-text text-uppercase">Add to Bag</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- single exclusive carousel -->
+                                <div class="single-exclusive-slider">
+                                    <img class="img-fluid" src="/client/img/product/e-p1.png" alt="">
+                                    <div class="product-details">
+                                        <div class="price">
+                                            <h6>$150.00</h6>
+                                            <h6 class="l-through">$210.00</h6>
+                                        </div>
+                                        <h4>addidas New Hammer sole
+                                            for Sports person</h4>
+                                        <div class="add-bag d-flex align-items-center justify-content-center">
+                                            <a class="add-btn" href=""><span class="ti-bag"></span></a>
+                                            <span class="add-text text-uppercase">Add to Bag</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- End exclusive deal Area -->
+
+            <!-- start footer Area -->
             <jsp:include page="/WEB-INF/view/client/layout/footer.jsp" />
+            <!-- End footer Area -->
 
+            <script src="/client/js/vendor/jquery-2.2.4.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
+                integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+                crossorigin="anonymous"></script>
+            <script src="/client/js/vendor/bootstrap.min.js"></script>
+            <script src="/client/js/jquery.ajaxchimp.min.js"></script>
+            <script src="/client/js/jquery.nice-select.min.js"></script>
+            <script src="/client/js/jquery.sticky.js"></script>
+            <script src="/client/js/nouislider.min.js"></script>
+            <script src="/client/js/countdown.js"></script>
+            <script src="/client/js/jquery.magnific-popup.min.js"></script>
+            <script src="/client/js/owl.carousel.min.js"></script>
+            <!--gmaps Js-->
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
+            <script src="/client/js/gmaps.min.js"></script>
+            <script src="/resources/client/js/main.js"></script>
         </body>
 
         </html>

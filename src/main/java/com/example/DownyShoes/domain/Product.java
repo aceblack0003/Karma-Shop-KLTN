@@ -1,5 +1,6 @@
 package com.example.DownyShoes.domain;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -28,6 +29,7 @@ public class Product {
     private String image;
 
     @NotNull
+    @Column(columnDefinition = "MEDIUMTEXT")
     @Size(min = 1, max = 255, message = "Detail description is required")
     private String detailDesc;
 
