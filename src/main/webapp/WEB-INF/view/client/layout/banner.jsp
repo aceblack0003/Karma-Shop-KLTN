@@ -1,5 +1,5 @@
- <!-- start banner Area -->
- <section class="banner-area">
+<!-- start banner Area -->
+<section class="banner-area">
     <div class="container">
         <div class="row fullscreen align-items-center justify-content-start">
             <div class="col-lg-12">
@@ -13,10 +13,7 @@
                                     tempor incididunt ut labore et
                                     dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
                                 </p>
-                                <div class="add-bag d-flex align-items-center">
-                                    <a class="add-btn" href=""><span class="lnr lnr-cross"></span></a>
-                                    <span class="add-text text-uppercase">Add to Bag</span>
-                                </div>
+                               
                             </div>
                         </div>
                         <div class="col-lg-7">

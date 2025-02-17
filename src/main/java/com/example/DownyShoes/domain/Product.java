@@ -6,7 +6,6 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import jakarta.validation.constraints.DecimalMin;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
@@ -22,15 +21,14 @@ public class Product {
     @Size(min = 1, max = 255, message = "Name is required")
     private String name;
 
-    @NotNull
-    @DecimalMin(value = "0", inclusive = false, message = "Price must be greater than 0")
+    @NotNull(message = "Price must be greater than 0")
     private double price;
 
     private String image;
 
     @NotNull
     @Column(columnDefinition = "MEDIUMTEXT")
-    @Size(min = 1, max = 255, message = "Detail description is required")
+    @Size(min = 1, message = "Detail description is required")
     private String detailDesc;
 
     @NotNull
