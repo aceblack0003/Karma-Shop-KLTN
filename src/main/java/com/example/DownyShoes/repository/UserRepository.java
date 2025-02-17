@@ -9,6 +9,11 @@ import com.example.DownyShoes.domain.User;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
+
+    boolean existsByEmail(String email);
+
+    boolean existsByPhone(String phone);
+
     User save(User user);
 
     User findOneByEmail(String email);

@@ -5,6 +5,8 @@ import java.util.List;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,6 +16,8 @@ import com.example.DownyShoes.domain.User;
 import com.example.DownyShoes.domain.dto.RegisterDTO;
 import com.example.DownyShoes.service.ProductService;
 import com.example.DownyShoes.service.UserService;
+
+import jakarta.validation.Valid;
 
 @Controller
 public class HomePageController {
@@ -42,7 +46,11 @@ public class HomePageController {
     }
 
     @PostMapping("/register")
-    public String handleRegister(@ModelAttribute("registerDTO") RegisterDTO registerDTO) {
+    public String handleRegister(@ModelAttribute("registerDTO") @Valid RegisterDTO registerDTO,
+            BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            return "client/auth/register";
+        }
         User user = this.userService.registerDTOtoUser(registerDTO);
         String hashedPassword = this.passwordEncoder.encode(user.getPassword());
         user.setRole(this.userService.getRoleByName("USER"));
@@ -50,6 +58,7 @@ public class HomePageController {
         this.userService.handleSaveUser(user);
         return "redirect:/login";
     }
+
     @GetMapping("/login")
     public String getLoginPage(Model model) {
         return "client/auth/login";
