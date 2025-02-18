@@ -2,14 +2,27 @@ package com.example.DownyShoes.domain.dto;
 
 import com.example.DownyShoes.service.validator.RegisterChecked;
 
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.Size;
+
 @RegisterChecked
 public class RegisterDTO {
+    @Size(min = 2, message = "First name must be at least 2 characters")
     private String firstName;
+
+    @Size(min = 1, message = "Last name must be at least 1 characters")
     private String lastName;
+
     private String phone;
+
     private String address;
+
+    @Email(message = "Invalid email address", regexp = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$")
     private String email;
+
     private String password;
+
+    @Size(min = 6, message = "Password must be at least 6 characters")
     private String confirmPassword;
 
     public String getFirstName() {

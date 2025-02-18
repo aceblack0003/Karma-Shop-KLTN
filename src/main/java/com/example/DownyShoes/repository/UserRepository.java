@@ -16,11 +16,13 @@ public interface UserRepository extends JpaRepository<User, Long> {
 
     User save(User user);
 
-    User findOneByEmail(String email);
+    List<User> findOneByEmail(String email);
 
     List<User> findAll();
 
     User findById(long id);
 
     void deleteById(long id);
+
+    User findByEmail(String email);
 }
