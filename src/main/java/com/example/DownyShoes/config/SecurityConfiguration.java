@@ -49,8 +49,11 @@ public class SecurityConfiguration {
                                 DispatcherType.INCLUDE)
                         .permitAll()
 
-                        .requestMatchers("/", "/login", "/client/**", "/css/**", "/js/**", "/images/**")
+                        .requestMatchers("/", "/product/**", "/login", "/client/**", "/css/**", "/js/**", "/images/**")
                         .permitAll()
+
+                        .requestMatchers("/admin/**").hasAuthority("ADMIN")
+
                         .anyRequest().authenticated())
 
                 .formLogin(formLogin -> formLogin
