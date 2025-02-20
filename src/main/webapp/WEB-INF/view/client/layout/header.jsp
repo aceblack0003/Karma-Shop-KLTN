@@ -23,7 +23,13 @@
                                 </ul>
                                 <c:if test="${not empty pageContext.request.userPrincipal}">
                                     <ul class="nav navbar-nav navbar-right">
-                                        <li class="nav-item"><a href="#" class="cart"><span class="ti-bag"></span></a>
+                                        <li class="nav-item">
+                                            <a href="#" class="cart">
+                                                <span class="ti-bag"></span>
+                                                <span class="cart-count">
+                                                    ${sessionScope.sum}
+                                                </span>
+                                            </a>
                                         </li>
                                         <li class="nav-item dropdown">
                                             <a href="#" class="user">
