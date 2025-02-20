@@ -18,7 +18,7 @@ public class Product {
     private long id;
 
     @NotNull
-    @Size(min = 1, max = 255, message = "Name is required")
+    @Size(min = 1, max = 53, message = "Name is required")
     private String name;
 
     @NotNull(message = "Price must be greater than 0")
