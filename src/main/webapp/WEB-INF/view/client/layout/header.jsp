@@ -24,7 +24,7 @@
                                 <c:if test="${not empty pageContext.request.userPrincipal}">
                                     <ul class="nav navbar-nav navbar-right">
                                         <li class="nav-item">
-                                            <a href="#" class="cart">
+                                            <a href="/cart" class="cart">
                                                 <span class="ti-bag"></span>
                                                 <span class="cart-count">
                                                     ${sessionScope.sum}
