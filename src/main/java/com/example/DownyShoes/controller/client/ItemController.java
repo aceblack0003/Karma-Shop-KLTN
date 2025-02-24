@@ -60,4 +60,12 @@ public class ItemController {
         model.addAttribute("total", total);
         return "client/cart/show";
     }
+
+    @PostMapping("/delete-cart-detail/{id}")
+    public String deleteCartDetail(@PathVariable long id, HttpServletRequest request) {
+        HttpSession session = request.getSession(false);
+        long cartDetailId = id;
+        this.productService.handleRemoveCartDetail(cartDetailId, session);
+        return "redirect:/cart";
+    }
 }

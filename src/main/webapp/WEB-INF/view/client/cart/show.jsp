@@ -100,8 +100,13 @@
                                                     </h5>
                                                 </td>
                                                 <td>
-                                                    <a href="/cart/delete/${cartDetail.id}"
-                                                        class="btn btn-danger">Delete</a>
+                                                    <form action="/delete-cart-detail/${cartDetail.id}" method="post">
+                                                        <input type="hidden" name="${_csrf.parameterName}"
+                                                            value="${_csrf.token}">
+                                                        <button class="btn btn-danger">
+                                                            xóa
+                                                        </button>
+                                                    </form>
                                                 </td>
                                             </tr>
                                         </c:forEach>
