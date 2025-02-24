@@ -341,6 +341,11 @@ $(document).ready(function () {
       const input = button.parent().find('.qty');
       input.val(newVal);
 
+      //set form index
+      const index = input.attr('data-cart-detail-index');
+      const el = document.getElementById(`cartDetails${index}.quantity`);
+      $(el).val(newVal);
+
       // Get price
       const price = input.attr('data-price');
       const id = input.attr('data-id');
