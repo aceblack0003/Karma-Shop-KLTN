@@ -3,8 +3,6 @@ package com.example.DownyShoes.controller.admin;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import com.example.DownyShoes.service.OrderService;
-import com.example.DownyShoes.service.ProductService;
 import com.example.DownyShoes.service.UserService;
 
 

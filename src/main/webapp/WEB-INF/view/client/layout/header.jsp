@@ -40,7 +40,7 @@
                                                     class="dropdown-item">${pageContext.request.userPrincipal.name}</span>
                                                 <a class="dropdown-item" href="/account-management">Quản lý tài
                                                     khoản</a>
-                                                <a class="dropdown-item" href="/purchase-history">Lịch sử mua hàng</a>
+                                                <a class="dropdown-item" href="/order-history">Lịch sử mua hàng</a>
                                                 <form action="/logout" method="post">
                                                     <input type="hidden" name="${_csrf.parameterName}"
                                                         value="${_csrf.token}" />

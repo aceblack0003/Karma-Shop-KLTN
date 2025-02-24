@@ -42,7 +42,7 @@ public class ItemController {
         HttpSession session = request.getSession(false);
         long productId = id;
         String email = (String) session.getAttribute("email");
-        this.productService.handleAddProductToCart(email, productId, session);
+        this.productService.handleAddProductToCart(email, productId, session, 1);
         return "redirect:/";
     }
 
@@ -99,7 +99,8 @@ public class ItemController {
     @PostMapping("/place-order")
     public String handlePlaceOrder(HttpServletRequest request, @RequestParam("receiverName") String receiverName,
             @RequestParam("receiverPhone") String receiverPhone,
-            @RequestParam("receiverAddress") String receiverAddress) {
+            @RequestParam("receiverAddress") String receiverAddress
+           ) {
         User currentUser = new User();
         HttpSession session = request.getSession(false);
         long id = (long) session.getAttribute("id");
@@ -112,5 +113,14 @@ public class ItemController {
     @GetMapping("/thank")
     public String getThankPage(Model model) {
         return "client/cart/thank";
+    }
+
+    @PostMapping("/add-product-from-view-detail")
+    public String handleAddProductFromViewDetail(@RequestParam("quantity") long quantity,
+            @RequestParam("id") long id, HttpServletRequest request) {
+        HttpSession session = request.getSession(false);
+        String email = (String) session.getAttribute("email");
+        this.productService.handleAddProductToCart(email, id, session, quantity);
+        return "redirect:/product/" + id;
     }
 }

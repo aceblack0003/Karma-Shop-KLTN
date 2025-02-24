@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.example.DownyShoes.domain.Order;
 import com.example.DownyShoes.domain.OrderDetail;
+import com.example.DownyShoes.domain.User;
 import com.example.DownyShoes.repository.OrderRepository;
 import com.example.DownyShoes.repository.OrderDetailRepository;
 
@@ -52,5 +53,9 @@ public class OrderService {
             currentOrder.setStatus(order.getStatus());
             this.orderRepository.save(currentOrder);
         }
+    }
+
+    public List<Order> fetchOrderByUser(User user) {
+        return this.orderRepository.findByUser(user);
     }
 }
