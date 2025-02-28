@@ -69,8 +69,8 @@
                                 <h6>Follow Us</h6>
                                 <p>Let us be social</p>
                                 <div class="footer-social d-flex align-items-center">
-                                    <a href="#"><i class="fa fa-facebook"></i></a>
-                                    <a href="#"><i class="fa fa-github"></i></a>
+                                    <a href="https://www.facebook.com/lynklee2401/"><i class="fa fa-facebook"></i></a>
+                                    <a href="https://github.com/Huynguyen32"><i class="fa fa-github"></i></a>
 
                                 </div>
                             </div>
