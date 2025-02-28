@@ -137,13 +137,10 @@
                                                     </td>
                                                 </tr>
                                             </div>
-
-
-
-
                                         </tbody>
                                     </table>
                                     <form:form action="/confirm-checkout" method="post" modelAttribute="cart">
+
                                         <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
                                         <div style="display: none;">
                                             <c:forEach items="${cart.cartDetails}" var="cartDetail" varStatus="status">
@@ -162,6 +159,11 @@
                                                     </div>
                                                 </div>
                                             </c:forEach>
+                                                <label>Subtotal:</label>
+                                                <h5 data-price="${total}">
+                                                    <fmt:formatNumber pattern="#,###" value="${total}"
+                                                        type="number" />
+                                                </h5>
                                         </div>
                                         <tr class="out_button_area">
                                             <td>
