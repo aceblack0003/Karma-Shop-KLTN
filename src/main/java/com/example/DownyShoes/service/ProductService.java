@@ -14,7 +14,7 @@ import com.example.DownyShoes.domain.OrderDetail;
 import com.example.DownyShoes.domain.Product;
 import com.example.DownyShoes.domain.User;
 import com.example.DownyShoes.repository.ProductRepository;
-
+import com.example.DownyShoes.service.specification.ProductSpecs;
 import jakarta.servlet.http.HttpSession;
 
 import com.example.DownyShoes.repository.CartRepository;
@@ -48,6 +48,10 @@ public class ProductService {
 
     public Page<Product> fetchProducts(Pageable pageable) {
         return this.productRepository.findAll(pageable);
+    }
+
+    public Page<Product> fetchProductsWithSpec(Pageable pageable, String name) {
+        return this.productRepository.findAll(ProductSpecs.nameLike(name), pageable);
     }
 
     public Optional<Product> fetchProductById(long id) {
