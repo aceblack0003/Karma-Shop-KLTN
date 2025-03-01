@@ -61,12 +61,15 @@ public class ProductController {
     public String postCreateProductPage(Model model,
             @ModelAttribute("newProduct") @Valid Product newProduct,
             BindingResult bindingResult,
-            @RequestParam("avatarFile") MultipartFile avatarFile) {
+            @RequestParam("avatarFile") MultipartFile avatarFile,
+            @RequestParam("size") String[] size) {
         if (bindingResult.hasErrors()) {
             return "admin/product/create";
         }
         String image = this.uploadService.handleSaveUploadFile(avatarFile, "product");
         newProduct.setImage(image);
+        newProduct.setSize(String.join(",", size));
+        System.out.println("check size: " + newProduct.getSize());
         this.productService.createProduct(newProduct);
         return "redirect:/admin/product";
     }
@@ -75,13 +78,15 @@ public class ProductController {
     public String getUpdateProductPage(Model model, @PathVariable long id) {
         Optional<Product> product = this.productService.fetchProductById(id);
         model.addAttribute("newProduct", product.get());
+        model.addAttribute("size", product.get().getSize().split(","));
         return "admin/product/update";
     }
 
     @PostMapping("/admin/product/update")
     public String handleUpdateProduct(@ModelAttribute("newProduct") @Valid Product product,
             BindingResult bindingResult,
-            @RequestParam("avatarFile") MultipartFile file) {
+            @RequestParam("avatarFile") MultipartFile file,
+            @RequestParam("size") String[] size) {
         if (bindingResult.hasErrors()) {
             return "admin/product/update";
         }
@@ -99,6 +104,7 @@ public class ProductController {
             currentProduct.setShortDesc(product.getShortDesc());
             currentProduct.setFactory(product.getFactory());
             currentProduct.setTarget(product.getTarget());
+            currentProduct.setSize(String.join(",", size));
 
             this.productService.createProduct(currentProduct);
         }
