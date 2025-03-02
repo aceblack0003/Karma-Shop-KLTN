@@ -18,8 +18,12 @@ public class ProductSpecs {
         return (root, query, criteriaBuilder) -> criteriaBuilder.greaterThanOrEqualTo(root.get(Product_.PRICE), minPrice);
     }
 
-    public static Specification<Product> factoryLike(List<String> factory) {
+    public static Specification<Product> factoryList(List<String> factory) {
         return (root, query, criteriaBuilder) -> criteriaBuilder.in(root.get(Product_.FACTORY)).value(factory);
+    }
+
+    public static Specification<Product> targetList(List<String> target) {
+        return (root, query, criteriaBuilder) -> criteriaBuilder.in(root.get(Product_.TARGET)).value(target);
     }
 
     public static Specification<Product> target(String target) {
