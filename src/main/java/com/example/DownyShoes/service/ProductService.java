@@ -50,8 +50,20 @@ public class ProductService {
         return this.productRepository.findAll(pageable);
     }
 
-    public Page<Product> fetchProductsWithSpec(Pageable pageable, String name) {
-        return this.productRepository.findAll(ProductSpecs.nameLike(name), pageable);
+    // public Page<Product> fetchProductsWithSpec(Pageable pageable, String name) {
+    //     return this.productRepository.findAll(ProductSpecs.nameLike(name), pageable);
+    // }
+
+    // public Page<Product> fetchProductsWithSpec(Pageable pageable, List<String> factory) {
+    //     return this.productRepository.findAll(ProductSpecs.factoryLike(factory), pageable);
+    // }
+
+    // public Page<Product> fetchProductsWithSpec(Pageable pageable, String target) {
+    //     return this.productRepository.findAll(ProductSpecs.target(target), pageable);
+    // }
+
+    public Page<Product> fetchProductsWithSpec(Pageable pageable, String sizeList) {
+        return this.productRepository.findAll(ProductSpecs.size(sizeList), pageable);
     }
 
     public Optional<Product> fetchProductById(long id) {

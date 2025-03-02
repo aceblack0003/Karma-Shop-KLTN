@@ -1,6 +1,7 @@
 package com.example.DownyShoes.controller.client;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
@@ -129,7 +130,10 @@ public class ItemController {
 
     @GetMapping("/product")
     public String getProductPage(Model model, @RequestParam("page") Optional<String> pageOptional,
-            @RequestParam("name") Optional<String> nameOptional) {
+            @RequestParam("name") Optional<String> nameOptional,
+            @RequestParam("factory") Optional<List<String>> factoryOptional,
+            @RequestParam("target") Optional<String> targetOptional,
+            @RequestParam("size") Optional<String> sizeOptional) {
         int page = 1;
         try {
             if (pageOptional.isPresent()) {
@@ -144,8 +148,12 @@ public class ItemController {
         }
 
         Pageable pageable = PageRequest.of(page - 1, 6);
-        String name = nameOptional.isPresent() ? nameOptional.get() : "";
-        Page<Product> prs = this.productService.fetchProductsWithSpec(pageable, name);
+        // String name = nameOptional.isPresent() ? nameOptional.get() : "";
+        // double min = minPriceOptional.isPresent() ? Double.parseDouble(minPriceOptional.get()) : 0;
+        // List<String> listFactory = factoryOptional.isPresent() ? factoryOptional.get() : new ArrayList<>();
+        // String target = targetOptional.isPresent() ? targetOptional.get() : "";
+        String sizeList = sizeOptional.isPresent() ? sizeOptional.get() : "";
+        Page<Product> prs = this.productService.fetchProductsWithSpec(pageable, sizeList);
         List<Product> products = prs.getContent();
 
         model.addAttribute("products", products);
